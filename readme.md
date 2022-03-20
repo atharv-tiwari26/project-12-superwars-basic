@@ -1,22 +1,16 @@
 ![Image description](https://i1.faceprep.in/ProGrad/face-logo-resized.png)
 
-# ProGrad Lab | Superwars Stage 2
+# ProGrad Lab | Chocoloate Dispenser
 
-Remember Superwars stage 1? However, here is a quick recap of things.
+Caitlyn loved chocolates and asked her mum to buy her a truck of chocolates. Her mum wasn't as generous, but she did buy Cait a tiny chocolate dispenser. However, she didn't teach Cait how to operate it. She would only give her one chocolate a day. Cait obviously wanted more, so much more.
 
-Dustin and Lucus are best friends. They spend their weekends watching superhero series and playing superhero games. One Friday at school Mr.Hooper, their computer science faculty taught them HTML, CSS, and JavaScript. Dustin & Lucus realised they could build super cool super hero stuff using their knowledge. 
-
-The subsequent weekend, they decided to do it. Lucus and Dustin are now all set to build something super cool.
-
-Lucus always loves protagonists like most of us. But Dustin is quite crazy, he likes antagonists. So they decided to collect a bunch of their favorite Super Heroes and Super Villains names along with their pictures. Did they tell you about the game that they are gonna build? 
-
-Okay, let us explain. They are going to facilitate the ultimate war between Super Heroes and Super Villains. As they are new to these technologies, they need a **ProGrad** to help them build this game.
+Cait is now on a quest to create a virtual terminal which can directly access the chocolate machine. She needs **YOU** to help her code functionalities in the back-end though. Go to the `src/app.js` file and complete all the unfinished code to satiate her sweet tooth.
 
 ## What should you do
 ```
 Fork this repo
 Clone this repo
-Practice JavaScript Basics - Operators, Conditions, Loops
+Practice JavaScript Arrays - higher order function
 ```
 
 ## How To Submit
@@ -32,54 +26,53 @@ And finally, create a pull request so your ProGrad Mentor (PM) can review your w
 
 ## Starter code
 
-The `src/app.js` contains an array of 20 Super Heroes and Super-Villains. We are talking about the array of 20 _strings_ containing each Super Heroes and Super-Villains names. Here is one example of how the data is displayed:
+The `src/app.js` contains an array of 100 chocolates. We are talking about the 100 _strings_ that specifies the color of each chocolate. Available chocolates are of the colors `green, red, purple, blue, crimson, silver, pink`.
 
-```javascript
-[
-    "Spiderman"
-]
-```
+Every function will take the `chocolates` array as it's first input by default.
 
 ### Tests
 
-Open the `SpecRunner.html` file on your browser and start coding to pass the test. Remember to focus on one test at a time and read carefully the instructions to understand what you have to do.
+As usual, open the `SpecRunner.html` file on your browser and start coding to pass the test. Remember to focus on one test at a time and read carefully the instructions to understand what you have to do.
 
-### Progression 1: More players, more fun
+### Progression 1: MORE! MORE! MORE!
 
-Dustin and Lucus wants to create players.In `initPlayers()`, loop through passed constant and  create JSON Objects, such that each player contains name, strength, image url and type.  
-* Use default `strength` as any number.  
-* `image` can be sequential i.e. "images/super-"+(i+1)+".png"  
-* `type` of player can alternating between hero and villain or your own logic
-* It should _return an array_ of player objects.
-    ```javascript
-    [
-        {
-            name:"Super Man",
-            strength:100,
-            image:"images/hero-1.png",
-            type:"hero|villain"
-        }
-    ]
-    ```
+Hundred chocolates? Not enough! We certainly need more. Create a function `addChocolates()` which takes `chocolates,color, count` as arguments and adds them to the dispenser from the top.
 
-### Progression 2: Courage is grace
+### Progression 2: LESS! LESS! LESS!
 
-Add your logic in `getRandomStrength()` method, such that it should _return a random strength_ from 1 to 100. The strength is what is gonna decide the winner.
+We have added too many chocolates and the machine has started to malfunction. Create a function `removeChocolates()` that takes `number,chocolates` as an argument and _returns an array of chocolates_ that have been removed from the top.
 
-### Progression 3: No player should fall
+### Progression 3: One is not enough!
 
-In `buildPlayers()`, loop through the created JSON objects and accumulate HTML template as below and _return HTML element_.
- ```JS
-<div class="player">
-    <img src="${players[i].image}">
-    <div class="name">${players[i].name}</div>
-    <div class="strength">${players[i].strength}</div>
-</div>
-```
+Cait can't have just one chocolate a day. So our next task would be to create a function `dispenseChocolates()` that dispenses chocolate at her will. It takes `number,chocolates` as an argument and _returns an array of chocolates_ from the bottom.
 
-## Expected Output
+### Progression 4: My favourite color is...
 
-![Superwars](doc/superwars-basic1.png)
-![Superwars](doc/superwars-basic2.png)
+Cait is annoyed with all the green chocolates she's been getting. Time to change things up a bit. Create a function `dispenseChocolatesOfColor()` which takes `chocolates,number, color` as arugments and _return an array of chocolates_ from the bottom of the given color.
+
+### Progression 5: LED my chocos!
+
+Cait is finding it difficult to keep track of her chocolates. You'll need to create an LED that shows her how many chocolates of each color are remaining. Create a function `noOfChocolates()` that _returns an array of number of chocolates_ in the order `[green, silver, blue, crimson, purple, red, pink]`.
+
+### Progression 6: Let's stack em up!
+
+Cait wants to eat a lot of chocolates, but is trying to restrain herself. Therefore she has decided to only eat chocolates that are least in number. To do this though, we need to have the chocolates arranged properly. Create a function `sortChocolateBasedOnCount()` which sorts the chocolates in descending order of their count.
+
+### Progression 7: They taste the same!
+
+Cait wants to the ability to change the color of the chocolates now. Little does she know, changing the wrapper won't change the flavor. But, well, create a function `changeChocolateColor()` which takes the arguments `chocolates,number, color, finalColor` and changes n chocolates of the of color to finalColor
+
+### Progression 8: Convert these heretics!
+
+Caits wants to change all chocolates of a given color to some other color. Pretty sure she's trying to get rid of all the green chocolates. Create a function `changeChocolateColorAllOfxCount()` which takes the argument `chocolates,color, finalColor` and changes all chocolates of color to finalColor. It should _return [countOfFinalColorChocolates, chocolates]_.
+
+
+### Challenge 1: Fresh pickings!
+
+Cait believes that all the best and newest chocolates are at the top of the machine. She needs help removing just one chocolate of the given color from the top. Create a function `removeChocolateOfColor()` which takes an argument `color` and removes one chocolate of the given color from the top.
+
+### Challenge 2: Rainbows and sunshine!
+
+Cait has found something incredible. Combining similar colored chocolates gives us an additional rainbow colored chocolate. She wants more of these, and less of her having to combine them. Create a function `dispenseRainbowChocolates()` which takes an argument `number` and _returns the number of rainbow chocolates_ dispensed for every 3 chocolates of the same color.
 
 Happy Coding ProGrad ❤️
